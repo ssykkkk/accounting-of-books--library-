@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+
+// **********VAR**********
+
+$bg: rgba(128, 128, 128, 0.1);
+$main-color: rgb(60, 69, 91);
+$sec-color: rgba(82, 49, 164, 0.5);
+$hov_main: rgb(116, 130, 168);
+$radius: 10px;
+$trans: 0.5s;
+$light-c: white;
+%flex-aic {
+  display: flex;
+  align-items: center;
+}
+// **********Global**********
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Oswald", sans-serif;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.container {
+  background-color: $light-c;
+  //   width: 1100px;
+  width: 1100px;
+  margin: 0 auto;
+  border-left: 4px solid;
+  border-right: 4px solid;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $light-c;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+// **********Header**********
+
+header {
+  .lib {
+    padding-left: 40px;
+    height: 60px;
+    @extend %flex-aic;
+    text-transform: uppercase;
+  }
+  .menu {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: $main-color;
+    color: $light-c;
+
+    a {
+      @extend %flex-aic;
+      height: 60px;
+      padding: 0 40px;
+      transition: 0.5s;
+      &:hover {
+        background-color: $hov_main;
+      }
+      &.active{
+        background-color: rgb(96, 107, 138);
+      }
+    }
+  }
+}
+
+// **********Books**********
+.books {
+  height: calc(100vh - 200px);
+  margin: 10px 20px;
+  // max-height: calc(100vh - 200px);
+  .add {
+    @extend %flex-aic;
+    justify-content: space-between;
+    height: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    span {
+      margin-left: 20px;
+      font-size: 22px;
+    }
+    button {
+      margin-right: 20px;
+      background-color: $hov_main;
+      color: $light-c;
+      padding: 10px 20px;
+      border-radius: $radius;
+      border: none;
+      font-family: "Oswald", sans-serif;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+  .panel {
+    height: 40px;
+    margin: 10px 20px;
+    @extend %flex-aic;
+    justify-content: space-between;
+    .sort {
+      @extend %flex-aic;
+      gap: 10px;
+      select {
+        padding: 5px 15px;
+        border-radius: $radius;
+        font-family: "Oswald", sans-serif;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+      }
+    }
+    .search {
+      input {
+        font-family: "Oswald", sans-serif;
+        padding: 5px 15px;
+        border-radius: $radius;
+        border: 1px solid rgba(128, 128, 128, 0.5);
+      }
+    }
+  }
+  td,
+  th {
+    border: 1px solid #333;
+    padding: 5px 10px;
+    text-align: center;
+    width: 200px;
+
+  }
+  th {
+    background-color: #d8d8d8;
+  }
+  .edit {
+    cursor: pointer;
+    img {
+      width: 20px;
+    }
+    &:hover{
+      background-color: rgba(116, 130, 168,0.2);
+    }
+  }
+  table{
+    position: relative;
+  }
+  thead{
+    position: sticky;
+    top: 0;
+  }
+  .allItems {
+    border: 1px solid #333;
+    width: 100%;
+    height: calc(100vh - 320px);
+    overflow: auto;
+  }
+  .modalNew {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    @extend %flex-aic;
+    justify-content: center;
+    display: none;
+    background-color: rgba(136, 136, 136, 0.5);
+    .wind {
+      display: grid;
+      gap: 15px;
+      padding: 20px 40px;
+      background-color: $light-c;
+      border-radius: $radius;
+      h3 {
+        text-align: center;
+      }
+      > div {
+        @extend %flex-aic;
+        justify-content: space-between;
+        gap: 10px;
+        input {
+          width: 250px;
+          font-family: "Oswald", sans-serif;
+          padding: 5px 15px;
+          border-radius: $radius;
+          border: 1px solid rgba(128, 128, 128, 0.5);
+        }
+      }
+      button {
+        background-color: $hov_main;
+        color: $light-c;
+        padding: 10px 20px;
+        border-radius: $radius;
+        border: none;
+        font-family: "Oswald", sans-serif;
+        cursor: pointer;
+        transition: 0.5s;
+        text-transform: uppercase;
+        &:hover {
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+  .modalEdit {
+    @extend .modalNew;
+    button.delete{
+      height: 100%;
+      padding: 0;
+      background-color: rgba(255, 0, 0, 0.6);
+      &:hover{
+      background-color: rgba(176, 0, 0, 0.8);
+      }
+    }
+    .wind{
+      >div:last-child{
+        display: grid;
+        grid-template-columns: 6fr 1fr;
+
+        img{
+          width: 20px;
+        }
+      }
+    }
+  }
+  .modalExist {
+    z-index: 10;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    @extend %flex-aic;
+    justify-content: center;
+    display: none;
+    background-color: rgba(136, 136, 136, 0.5);
+    > div {
+      padding: 20px;
+      border-radius: $radius;
+      background-color: $light-c;
+      color: red;
+    }
+  }
+}
+
+// **********Visitors**********
+
+.visit {
+  @extend .books;
+  td, th{
+    width: 450px;
+    &:first-child{
+      width: 200px;
+    }
+    &:last-child{
+      width: 200px;
+    }
+  }
+}
+
+// **********Cards**********
+.card {
+  @extend .books;
+  td, th{
+    width: 450px;
+    &:first-child{
+      width: 200px;
+    }
+  }
+  .allItems {
+    height: calc(100vh - 260px);
+  }
+  .modalNew{
+    select{
+      width: 250px;
+          font-family: "Oswald", sans-serif;
+          padding: 5px 15px;
+          border-radius: $radius;
+          border: 1px solid rgba(128, 128, 128, 0.5);
+    }
+  }
+}
+
+// **********Statistics**********
+.stat {
+  @extend .books;
+  td, th{
+    width: 550px;
+  }
+  .allItems {
+    height: calc(100vh - 513px);
+  }
+  >img{
+    margin-top: 7px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $radius;
+  }
+}
+
+// **********Footer**********
+footer {
+  padding: 0 20px;
+  height: 60px;
+  background-color: $main-color;
+  font-size: 14px;
+  @extend %flex-aic;
+  justify-content: space-between;
+  color: $light-c;
+  div:first-child {
+    display: grid;
+    a {
+      font-size: 10px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .social {
+    @extend %flex-aic;
+    gap: 10px;
+    a {
+      img {
+        border-radius: $radius;
+        width: 25px;
+        transition: $trans;
+        &:hover {
+          box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+        }
+      }
+    }
+  }
+}

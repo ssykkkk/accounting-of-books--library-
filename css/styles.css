@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+footer .social, footer, .books .modalExist, .stat .modalExist, .card .modalExist, .visit .modalExist, .books .modalNew .wind > div, .stat .modalNew .wind > div, .card .modalNew .wind > div, .visit .modalNew .wind > div, .books .modalEdit .wind > div, .stat .modalEdit .wind > div, .card .modalEdit .wind > div, .visit .modalEdit .wind > div, .books .modalNew, .stat .modalNew, .card .modalNew, .visit .modalNew, .books .modalEdit, .stat .modalEdit, .card .modalEdit, .visit .modalEdit, .books .panel .sort, .stat .panel .sort, .card .panel .sort, .visit .panel .sort, .books .panel, .stat .panel, .card .panel, .visit .panel, .books .add, .stat .add, .card .add, .visit .add, header .menu a, header .lib {
+  display: flex;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  background-color: white;
+  width: 1100px;
+  margin: 0 auto;
+  border-left: 4px solid;
+  border-right: 4px solid;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+header .lib {
+  padding-left: 40px;
+  height: 60px;
+  text-transform: uppercase;
+}
+header .menu {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(60, 69, 91);
+  color: white;
+}
+header .menu a {
+  height: 60px;
+  padding: 0 40px;
+  transition: 0.5s;
+}
+header .menu a:hover {
+  background-color: rgb(116, 130, 168);
+}
+header .menu a.active {
+  background-color: rgb(96, 107, 138);
+}
+
+.books, .stat, .card, .visit {
+  height: calc(100vh - 200px);
+  margin: 10px 20px;
+}
+.books .add, .stat .add, .card .add, .visit .add {
+  justify-content: space-between;
+  height: 50px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+.books .add span, .stat .add span, .card .add span, .visit .add span {
+  margin-left: 20px;
+  font-size: 22px;
+}
+.books .add button, .stat .add button, .card .add button, .visit .add button {
+  margin-right: 20px;
+  background-color: rgb(116, 130, 168);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.books .add button:hover, .stat .add button:hover, .card .add button:hover, .visit .add button:hover {
+  background-color: rgb(60, 69, 91);
+}
+.books .panel, .stat .panel, .card .panel, .visit .panel {
+  height: 40px;
+  margin: 10px 20px;
+  justify-content: space-between;
+}
+.books .panel .sort, .stat .panel .sort, .card .panel .sort, .visit .panel .sort {
+  gap: 10px;
+}
+.books .panel .sort select, .stat .panel .sort select, .card .panel .sort select, .visit .panel .sort select {
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-family: "Oswald", sans-serif;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+.books .panel .search input, .stat .panel .search input, .card .panel .search input, .visit .panel .search input {
+  font-family: "Oswald", sans-serif;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+.books td, .stat td, .card td, .visit td,
+.books th,
+.stat th,
+.card th,
+.visit th {
+  border: 1px solid #333;
+  padding: 5px 10px;
+  text-align: center;
+  width: 200px;
+}
+.books th, .stat th, .card th, .visit th {
+  background-color: #d8d8d8;
+}
+.books .edit, .stat .edit, .card .edit, .visit .edit {
+  cursor: pointer;
+}
+.books .edit img, .stat .edit img, .card .edit img, .visit .edit img {
+  width: 20px;
+}
+.books .edit:hover, .stat .edit:hover, .card .edit:hover, .visit .edit:hover {
+  background-color: rgba(116, 130, 168, 0.2);
+}
+.books table, .stat table, .card table, .visit table {
+  position: relative;
+}
+.books thead, .stat thead, .card thead, .visit thead {
+  position: sticky;
+  top: 0;
+}
+.books .allItems, .stat .allItems, .card .allItems, .visit .allItems {
+  border: 1px solid #333;
+  width: 100%;
+  height: calc(100vh - 320px);
+  overflow: auto;
+}
+.books .modalNew, .stat .modalNew, .card .modalNew, .visit .modalNew, .books .modalEdit, .stat .modalEdit, .card .modalEdit, .visit .modalEdit {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  display: none;
+  background-color: rgba(136, 136, 136, 0.5);
+}
+.books .modalNew .wind, .stat .modalNew .wind, .card .modalNew .wind, .visit .modalNew .wind, .books .modalEdit .wind, .stat .modalEdit .wind, .card .modalEdit .wind, .visit .modalEdit .wind {
+  display: grid;
+  gap: 15px;
+  padding: 20px 40px;
+  background-color: white;
+  border-radius: 10px;
+}
+.books .modalNew .wind h3, .stat .modalNew .wind h3, .card .modalNew .wind h3, .visit .modalNew .wind h3, .books .modalEdit .wind h3, .stat .modalEdit .wind h3, .card .modalEdit .wind h3, .visit .modalEdit .wind h3 {
+  text-align: center;
+}
+.books .modalNew .wind > div, .stat .modalNew .wind > div, .card .modalNew .wind > div, .visit .modalNew .wind > div, .books .modalEdit .wind > div, .stat .modalEdit .wind > div, .card .modalEdit .wind > div, .visit .modalEdit .wind > div {
+  justify-content: space-between;
+  gap: 10px;
+}
+.books .modalNew .wind > div input, .stat .modalNew .wind > div input, .card .modalNew .wind > div input, .visit .modalNew .wind > div input, .books .modalEdit .wind > div input, .stat .modalEdit .wind > div input, .card .modalEdit .wind > div input, .visit .modalEdit .wind > div input {
+  width: 250px;
+  font-family: "Oswald", sans-serif;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+.books .modalNew .wind button, .stat .modalNew .wind button, .card .modalNew .wind button, .visit .modalNew .wind button, .books .modalEdit .wind button, .stat .modalEdit .wind button, .card .modalEdit .wind button, .visit .modalEdit .wind button {
+  background-color: rgb(116, 130, 168);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  cursor: pointer;
+  transition: 0.5s;
+  text-transform: uppercase;
+}
+.books .modalNew .wind button:hover, .stat .modalNew .wind button:hover, .card .modalNew .wind button:hover, .visit .modalNew .wind button:hover, .books .modalEdit .wind button:hover, .stat .modalEdit .wind button:hover, .card .modalEdit .wind button:hover, .visit .modalEdit .wind button:hover {
+  background-color: rgb(60, 69, 91);
+}
+.books .modalEdit button.delete, .stat .modalEdit button.delete, .card .modalEdit button.delete, .visit .modalEdit button.delete {
+  height: 100%;
+  padding: 0;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.books .modalEdit button.delete:hover, .stat .modalEdit button.delete:hover, .card .modalEdit button.delete:hover, .visit .modalEdit button.delete:hover {
+  background-color: rgba(176, 0, 0, 0.8);
+}
+.books .modalEdit .wind > div:last-child, .stat .modalEdit .wind > div:last-child, .card .modalEdit .wind > div:last-child, .visit .modalEdit .wind > div:last-child {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+}
+.books .modalEdit .wind > div:last-child img, .stat .modalEdit .wind > div:last-child img, .card .modalEdit .wind > div:last-child img, .visit .modalEdit .wind > div:last-child img {
+  width: 20px;
+}
+.books .modalExist, .stat .modalExist, .card .modalExist, .visit .modalExist {
+  z-index: 10;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  display: none;
+  background-color: rgba(136, 136, 136, 0.5);
+}
+.books .modalExist > div, .stat .modalExist > div, .card .modalExist > div, .visit .modalExist > div {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: red;
+}
+
+.visit td, .visit th {
+  width: 450px;
+}
+.visit td:first-child, .visit th:first-child {
+  width: 200px;
+}
+.visit td:last-child, .visit th:last-child {
+  width: 200px;
+}
+
+.card td, .card th {
+  width: 450px;
+}
+.card td:first-child, .card th:first-child {
+  width: 200px;
+}
+.card .allItems {
+  height: calc(100vh - 260px);
+}
+.card .modalNew select, .card .modalEdit select {
+  width: 250px;
+  font-family: "Oswald", sans-serif;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.stat td, .stat th {
+  width: 550px;
+}
+.stat .allItems {
+  height: calc(100vh - 513px);
+}
+.stat > img {
+  margin-top: 7px;
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 0 20px;
+  height: 60px;
+  background-color: rgb(60, 69, 91);
+  font-size: 14px;
+  justify-content: space-between;
+  color: white;
+}
+footer div:first-child {
+  display: grid;
+}
+footer div:first-child a {
+  font-size: 10px;
+}
+footer div:first-child a:hover {
+  text-decoration: underline;
+}
+footer .social {
+  gap: 10px;
+}
+footer .social a img {
+  border-radius: 10px;
+  width: 25px;
+  transition: 0.5s;
+}
+footer .social a img:hover {
+  box-shadow: 0px 0px 5px 0px rgb(255, 255, 255);
+}/*# sourceMappingURL=styles.css.map */
